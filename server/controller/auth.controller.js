@@ -3,9 +3,10 @@ import User from '../model/User.model.js'
 import generateTokenAndSetCookie from '../utils/generateToken.js';
 
 export const signup = async (req, res) => {
-    console.log("Signup")
     try {
         const {firstName, lastName, username, password, confirmPassword, gender} = req.body;
+
+        console.log({firstName, lastName, username, password, confirmPassword, gender});
 
         if(password !== confirmPassword){
             return res.status(400).json({error: "Passwords didn't match"})

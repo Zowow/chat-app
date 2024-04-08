@@ -1,21 +1,32 @@
 import React, { useState } from 'react'
+import { useSignup } from '../hooks/useSignup'
 
 export default function Signup() {
+    const {signup, error, isLoading} = useSignup();
+
 
     const [inputs, setInputs] = useState({
         firstName: "",
-        lastname: "",
+        lastName: "",
         username: "",
         password: "",
         confirmPassword: "",
-        gender: ""
+        gender: "male"
     })
-    
 
+    const handleInputChange = (e) => {
+        setInputs({ ...inputs, gender: e.target.value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        await signup(inputs)
+    }
+    
     return (
         <div className='signup'>
         <h1>Welcome to Signup Page</h1>
-        <form action="">
+        <form onSubmit={handleSubmit}>
             <input 
                 type="text"
                 value={inputs.firstName}
@@ -46,8 +57,19 @@ export default function Signup() {
                 placeholder='Confirm Password'
                 onChange={(e) => setInputs({...inputs, confirmPassword: e.target.value})}
             />
-            {/* gender here */}
-            <input type="submit" />
+            <div>
+                <label htmlFor="gender">Gender: </label>
+                <select
+                    name="gender"
+                    value={inputs.gender}
+                    onChange={handleInputChange}
+                >
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <input type="submit" disabled={isLoading}/>
+            {error && <div className='error'>{error}</div>}
         </form>
         </div>
     )

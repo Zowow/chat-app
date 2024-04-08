@@ -60,3 +60,15 @@ input[type="submit"]:hover{
   background-color: white;
   color: #888;
 }
+
+/* Welcome */
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.welcome-profile-pic {
+  width: 100px;
+}
