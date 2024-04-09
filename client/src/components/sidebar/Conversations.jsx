@@ -5,7 +5,7 @@ import Conversation from './Conversation'
 
 const Conversations = () => {
   return (
-    <div>
+    <div className='conversation-container'>
       <Conversation/>
       <Conversation/>
       <Conversation/>

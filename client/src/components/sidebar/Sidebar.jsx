@@ -6,7 +6,7 @@ import Conversations from './Conversations';
 
 const Sidebar = () => {
     return (
-        <div>
+        <div className='sidebar-container'>
             <SearchInput/>
             <Conversations/>
         </div>

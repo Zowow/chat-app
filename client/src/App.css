@@ -72,3 +72,75 @@ input[type="submit"]:hover{
 .welcome-profile-pic {
   width: 100px;
 }
+
+
+/* Conversation */
+.conversation {
+  display: flex;
+  align-items: center;
+}
+
+.conversation:hover {
+  background-color: blue;
+}
+
+.avatar {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  line-height: 36px;
+  border-radius: 50%;
+  background-size: cover;
+  font-weight: 100;
+  font-size: 18px;
+  text-align: center;
+  text-shadow: 0 0 2px rgba(0,0,0,.9);
+  color: black;
+}
+
+.online-bubble {
+  position: relative;
+}
+
+.online-bubble:after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background: #7FB54F;
+  border: 1px solid black;
+  display: inline-block;
+  position: absolute;
+  top: 70%;
+  left: 65%;
+  border-radius: 50%;
+}
+
+.initial {
+  background-color: white;
+}
+
+.name {
+  margin-left: 10px;
+}
+
+/* Sidebar */
+
+.sidebar-container {
+  height: 50vh;
+  background-color: #505050;
+  padding: 1rem;
+}
+
+
+/* Search Input */
+
+.search {
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.search-button {
+  padding: 8px;
+  border-radius: 50%;
+}
