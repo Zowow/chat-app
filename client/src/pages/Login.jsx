@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useLogin } from '../hooks/useLogin'
 import toast from "react-hot-toast"
 
+import {Link} from "react-router-dom"
+
 export default function Login() {
     const {login,error,isLoading} = useLogin();
     const [username,setUsername] = useState("")
@@ -28,6 +30,7 @@ export default function Login() {
                 placeholder='Password here'
                 onChange={(e) => setPassword(e.target.value)}
             />
+            <Link to="/signup">Don't have an account yet? Click here</Link>
             <input disabled={isLoading} type="submit" />
             {/* {error && <div className='error'>{error}</div>} */}
         </form>

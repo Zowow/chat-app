@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useSignup } from '../hooks/useSignup'
+import { Link } from 'react-router-dom';
 
 export default function Signup() {
     const {signup, error, isLoading} = useSignup();
@@ -68,6 +69,7 @@ export default function Signup() {
                     <option value="female">Female</option>
                 </select>
             </div>
+            <Link to="/login">Already have an account? Click here</Link>
             <input type="submit" disabled={isLoading}/>
             {error && <div className='error'>{error}</div>}
         </form>
